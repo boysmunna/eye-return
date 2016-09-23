@@ -1,0 +1,20 @@
+<div class="site-wrapper">
+	<div class="container">
+	  	<h2>Campaigns</h2>
+	  	<p>These are the list of campaigns you can view:</p>
+	  	<table class="table table-bordered table-hover">
+		    <thead>
+			    <tr>
+			        <th>ID</th>
+			        <th>Name</th>
+			    </tr>
+		    </thead>
+		    <tbody>
+		      	<tr ng-repeat="campaign in campaigns" ng-click="openCampaign(campaign.id)">
+		        	<td>{{campaign.id}}</td>
+		        	<td>{{campaign.name}}</td>
+		      	</tr>
+		    </tbody>
+	 	</table>
+	</div>
+</div>

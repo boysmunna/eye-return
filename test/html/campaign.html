@@ -1,0 +1,76 @@
+<div class="dim-screen" ng-if="pageLoading"></div>
+<div class="container">
+	<div class="col-sm-12">
+		<h2><a href="/"><i class="fa fa-chevron-left" aria-hidden="true"></i></a> {{headingTitle}}</h2>
+		<p><a href="/">Campaigns</a> > {{headingTitle}}</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+	  <div class="col-sm-4">
+	    <div class="card card-block well">
+	      	<h3 class="card-title">Impressions</h3>
+	      	<p class="card-text">Total: {{campaignData.totalImpressions}}</p>
+	      	<p class="card-text">Most Recent: {{campaignData.recentImpressions}}</p>
+	    </div>
+	  </div>
+	  <div class="col-sm-4">
+	    <div class="card card-block well">
+	      	<h3 class="card-title">Clicks</h3>
+	      	<p class="card-text">Total: {{campaignData.totalClicks}}</p>
+	      	<p class="card-text">Most Recent: {{campaignData.recentClicks}}</p>
+	    </div>
+	  </div>
+	  <div class="col-sm-4">
+	    <div class="card card-block well">
+	      	<h3 class="card-title">Users</h3>
+	      	<p class="card-text">Total: {{campaignData.totalUsers}}</p>
+	      	<p class="card-text">Most Recent: {{campaignData.recentUsers}}</p>
+	    </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+	    	<div class="card card-block well">
+		      	<h3 class="card-title">Total CTR</h3>
+		      	<p class="card-text">{{campaignData.totalCTR}}</p>
+	    	</div>
+	  	</div>
+	  	<div class="col-sm-4">
+	    	<div class="card card-block well">
+		      	<h3 class="card-title">Most Recent CTR</h3>
+		      	<p class="card-text">{{campaignData.recentCTR}}</p>
+	    	</div>
+	  	</div>
+		<div class="col-sm-4">
+		    <div class="card card-block well">
+		      <h3 class="card-title">Current Number</h3>
+		      <p class="card-text">{{count}}</p>
+		    </div>
+		</div>
+		<div class="col-sm-3">
+	  	</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+	    	<div class="card card-block well">
+	      		<h3 class="card-title">SMA 
+					<select class="form-control data-pull" id="sel1" ng-model="dataPullCount" ng-change="updateData()">
+					    <option value="10">10</option>
+					    <option value="20">20</option>
+					    <option value="50">50</option>
+					    <option value="100">100</option>
+					    <option value="200">200</option>
+					    <option value="500">500</option>
+					</select>
+	      		</h3>
+	      		<p class="card-text">Clicks: {{campaignData.smaClicksValue}}</p>
+	      		<p class="card-text">Impressions: {{campaignData.smaImpressionsValue}}</p>
+	      		<p class="card-text">Users: {{campaignData.smaUsersValue}}</p>
+	    	</div>
+	  	</div>
+	  	<div class="col-sm-8">
+	  		<div google-chart chart="myChartObject"></div>
+	  	</div>
+	</div>
+</div>
